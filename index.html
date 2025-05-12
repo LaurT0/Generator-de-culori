@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generator de culori</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <div class="generate">
+                <input type="color" name="color" id="colorPicker">
+                <input type="submit" value="Generate Code" onclick="myColor()">
+
+                </div>
+            <div class="result">
+                <input type="text" name="text" id="result" autocomplete="off">
+                 <input type="submit" value="Copy Result" onclick="copy ('result')">
+            </div>
+            </div>
+        </div>
+    </div>
+    <script>
+            function myColor(){
+                let color = document.getElementById('colorPicker').value;
+                document.body.style.backgroundColor = color;
+                document.getElementById('result').value = color;
+                
+            }
+            let copy = (copyText) => {
+                document.getElementById(copyText).select(); 
+                
+                document.execCommand('copy'); 
+            }
+    </script>
+</body>
+</html>
